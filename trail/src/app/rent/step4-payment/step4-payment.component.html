@@ -1,0 +1,80 @@
+<div class="full-container">
+
+
+<div class="title">
+  <h2>Cancelar reserva</h2>
+  <p>Eligir el método de pago</p>
+</div>
+
+<div class="container-full">
+  <form [formGroup]="paymentForm" (ngSubmit)="submitForm()">
+    <!-- Sección de Información de la Tarjeta de Crédito -->
+    <div class="form-section">
+      <h2>Información de la tarjeta de crédito</h2>
+      <hr>
+      <div class="input-group">
+        <label for="cardName">Nombre en la tarjeta</label>
+        <input 
+          type="text" 
+          formControlName="cardName" 
+          [ngClass]="{'is-invalid': hasErrors('cardName', 'required') || hasErrors('cardName', 'pattern')}"
+        />
+        <div class="text-danger" *ngIf="hasErrors('cardName', 'required')">
+          El nombre en la tarjeta es requerido.
+        </div>
+        <div class="text-danger" *ngIf="hasErrors('cardName', 'pattern')">
+          Solo letras y espacios permitidos.
+        </div>
+      </div>
+  
+      <div class="input-group">
+        <label for="cardNumber">Número de la tarjeta</label>
+        <input 
+          type="text" 
+          formControlName="cardNumber" 
+          [ngClass]="{'is-invalid': hasErrors('cardNumber', 'required') || hasErrors('cardNumber', 'pattern')}"
+        />
+        <div class="text-danger" *ngIf="hasErrors('cardNumber', 'required')">
+          El número de la tarjeta es requerido.
+        </div>
+        <div class="text-danger" *ngIf="hasErrors('cardNumber', 'pattern')">
+          Debe ser un número de 16 dígitos.
+        </div>
+      </div>
+  
+      <div class="input-group half-width">
+        <label for="expiryDate">Fecha de expiración</label>
+        <input 
+          type="text" 
+          formControlName="expiryDate" 
+          [ngClass]="{'is-invalid': hasErrors('expiryDate', 'required') || hasErrors('expiryDate', 'pattern')}"
+        />
+        <div class="text-danger" *ngIf="hasErrors('expiryDate', 'required')">
+          La fecha de expiración es requerida.
+        </div>
+        <div class="text-danger" *ngIf="hasErrors('expiryDate', 'pattern')">
+          Formato inválido. Use MM/AA.
+        </div>
+      </div>
+  
+      <div class="input-group half-width">
+        <label for="cvc">CVC</label>
+        <input 
+          type="text" 
+          formControlName="cvc" 
+          [ngClass]="{'is-invalid': hasErrors('cvc', 'required') || hasErrors('cvc', 'pattern')}"
+        />
+        <div class="text-danger" *ngIf="hasErrors('cvc', 'required')">
+          El CVC es requerido.
+        </div>
+        <div class="text-danger" *ngIf="hasErrors('cvc', 'pattern')">
+          Debe ser un número de 3 dígitos.
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" class="submit-button" [disabled]="!paymentForm.valid">Pagar</button>
+  </form>
+  
+</div>
+</div>

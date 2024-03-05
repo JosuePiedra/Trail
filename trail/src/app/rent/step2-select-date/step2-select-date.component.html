@@ -1,0 +1,25 @@
+<div class="title">
+  <h2>Seleccione una fecha</h2>
+  <p>Seleccione la fecha y hora donde arrendarás tu vehículo</p>
+</div>
+<section class="content">
+  <app-calendar (dateChange)="getDate($event)" class="calendar" > </app-calendar>
+  <div class="schedule">
+    <div class="scroll-button" (click)="scrollSlots('up')">
+      <fa-icon [icon]="faCaretUp"></fa-icon>
+    </div>
+    <div class="time-slot-container">
+      <div
+        *ngFor="let timeSlot of timeSlots"
+        class="time-slot"
+        [class.selected]="timeSlot.selected"
+        (click)="selectTimeSlot(timeSlot)"
+      >
+        {{ timeSlot.start }} - {{ timeSlot.end }}
+      </div>
+    </div>
+    <div class="scroll-button" (click)="scrollSlots('down')">
+      <fa-icon [icon]="faCareDown"></fa-icon>
+    </div>
+  </div>
+</section>

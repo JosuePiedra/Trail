@@ -1,0 +1,71 @@
+.title {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 3em;
+
+  text-align: center;
+}
+
+.calendar{
+  box-shadow: inset;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  width: 80%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.schedule {
+  margin-left: 5em;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-slot-container {
+  max-height: 300px;
+  overflow-y: auto;
+  width: 15em;
+  text-align: center;
+}
+.time-slot {
+  /* Estilos para cada horario */
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.time-slot.selected {
+  /* Estilo para el horario seleccionado */
+  background-color: #2196ef;
+  color: white;
+}
+
+.scroll-button {
+  cursor: pointer;
+  width: 10%;
+  /* Agrega aquí más estilos para el botón de desplazamiento si es necesario */
+}
+
+/* Es posible que necesites ajustar los selectores dependiendo de la estructura exacta del DOM del calendario de Material. */
+.custom-calendar .mat-calendar-body-cell-content.mat-calendar-body-selected {
+  background-color: #3f51b5; /* Color de fondo para la fecha seleccionada */
+  color: white; /* Color del texto para la fecha seleccionada */
+}
+.custom-calendar .mat-calendar-body-cell-content.mat-calendar-body-today {
+  border-color: #3f51b5; /* Color de borde para la fecha de hoy */
+}

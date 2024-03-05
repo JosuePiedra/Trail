@@ -1,0 +1,82 @@
+<div class="title">
+  <h2>Elige un vehículo</h2>
+  <p>Elige un vehículo con el que te desplazarás por la ciudad</p>
+</div>
+
+<div class="button-container">
+
+  <button
+    class="button-icon"
+    [class.active]="activeButton === 'bicycle'"
+    (click)="setActiveButton('bicycle')"
+  >
+    <fa-icon [icon]="faBicycle"></fa-icon>
+  </button>
+
+
+  <button
+    class="button-icon"
+    [class.active]="activeButton === 'scooter'"
+    (click)="setActiveButton('scooter')"
+  >
+    <span class="material-icons">electric_scooter</span>
+  </button>
+</div>
+
+<div class="vehicle-carousel-container">
+  <!-- Botón izquierdo para navegar hacia atrás -->
+
+  <fa-icon [icon]="faCircleArrowLeft" (click)="navigate('prev')">
+    &gt;></fa-icon
+  >
+
+  <!-- Tarjeta del vehículo actual -->
+  <div class="vehicle-card" *ngIf="vehicles.length > 0">
+
+    <section class="image" >
+      <img src="{{vehicles[currentPage].img}}"/>
+    </section>
+   
+
+    <div
+  class="information-vehicle-section"
+  [ngClass]="{'selected': isSelected(vehicles[currentPage]._id)}"
+>
+      <h2 class="vehicle-name">{{ vehicles[currentPage].model }}</h2>
+
+      <div class="vehicle-information">
+        <h3 class="Title">Estado: </h3>
+        <span
+          *ngFor="let number of getRateNumbers()"
+          class="fa fa-star checked"
+        ></span>
+
+        <span *ngIf="halfStar === true" class="fa fa-star-half checked"></span>
+
+
+        <span *ngFor="let _ of getEmptyStars()" class="fa fa-star"></span>
+      </div>
+
+      <div class="vehicle-information">
+        <h3 class="Title">Bateria: </h3>
+        <span class="fa fa-battery-half"></span>
+        <h3>{{ vehicles[currentPage].battery }}%</h3>
+      </div>
+
+      <div class="vehicle-information">
+        <h3 class="Title">Año: </h3>
+        <h3>{{ vehicles[currentPage].manufacturingAge }}</h3>
+        
+      </div>
+
+      <button class="select-button" (click)="selectVehicle(vehicles[currentPage]._id)">Seleccionar</button>
+
+      <div class="cost">Paga 1.50$ por hora</div>
+    </div>
+  </div>
+
+  <fa-icon [icon]="faCircleArrowRight" (click)="navigate('next')">
+    &gt;></fa-icon
+  >
+</div>
+<!-- [disabled]="currentPage === vehicles.length - 1" -->

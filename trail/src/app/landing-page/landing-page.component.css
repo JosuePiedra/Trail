@@ -1,0 +1,418 @@
+.btn-red {
+  background-color: #de082e;
+  border-color: #de082e;
+  color: #fff;
+}
+.btn-red:active {
+  background-color: #ab0724;
+  border-color: #ab0724;
+}
+
+.presentacion {
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial;
+  font-size: 1em;
+  margin-left: auto;
+
+  margin-right: auto;
+}
+
+.presentacion h3,
+.presentacion h2 {
+  color: #000;
+  font-weight: 900;
+}
+
+.presentacion h3 {
+  font-size: 2em;
+}
+
+.presentacion h2 {
+  font-size: 3em;
+}
+
+.presentacion h4 {
+  color: #8c8c8c;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: 400;
+
+  margin: 1em auto;
+  margin-right: 3em;
+}
+
+.presentacion img {
+  height: 22em;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.Rentar {
+  color: white;
+  border-radius: 10px;
+  background-color: #de082e;
+  border: none;
+  align-items: center;
+  padding: 0.7em 4em;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.presentacion button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulosPage h2 {
+  color: #232323;
+
+  font-size: 2em;
+  font-style: normal;
+
+  line-height: normal;
+}
+
+.titulosPage h5,
+.pasosAlquilar p {
+  color: #8c8c8c;
+  text-align: center;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 200;
+  width: 50%;
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+  margin-top: 1em;
+}
+
+.servicios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin-left: auto;
+
+  margin-right: auto;
+}
+
+.servicioCard {
+  border-radius: 16.757px;
+  border: 0.838px solid #f2f2f0;
+  background: #fff;
+  box-shadow: 0px 8.37838px 3.35135px 0px #efefed;
+  align-items: center;
+  text-align: center;
+  max-width: 290px;
+  height: 340px;
+  margin: auto;
+}
+
+.servicios img {
+  max-width: auto;
+  height: 10em;
+}
+
+.servicios .servicioCard h5 {
+  color: #8c8c8c;
+  text-align: center;
+
+  font-size: 15.081px;
+
+  font-weight: 400;
+
+  margin-top: 1em;
+  padding: 2em;
+}
+
+.servicios .servicioCard h4 {
+  color: #000;
+
+  font-size: 16.757px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 1em;
+}
+
+.procesos {
+  text-align: center;
+  width: 80%;
+  align-items: center;
+  margin-left: auto;
+
+  margin-right: auto;
+}
+
+.procesos h4 {
+  color: #000;
+  text-align: center;
+
+  font-size: 1.3em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.procesos h5 {
+  color: #8c8c8c;
+  text-align: center;
+
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+.procesos section {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 3em;
+}
+
+.procesos button {
+  margin-top: 5em;
+}
+
+.descargarAplicacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f83d3d;
+  border-radius: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+}
+
+.descargarAplicacion .formasDescargar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.descargarAplicacion img {
+  height: auto;
+  width: 15em;
+}
+
+.descargarPlayStore img {
+  height: auto;
+  width: 12em;
+}
+
+.descargarAplicacion h2 {
+  color: #fff;
+  padding: 2em;
+  font-family: Lato Black;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.descargarAplicacion article button {
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  background-color: #fff;
+  border: none;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 15em;
+  height: 70px;
+}
+
+.descargarAplicacion article .formasDescargar .descargarAppleStore button img {
+  width: 4em;
+  height: auto;
+
+  padding-right: 0.5em;
+}
+
+.descargarAplicacion article .formasDescargar .descargarPlayStore button img {
+  width: 3em;
+  height: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.descargarAplicacion article .formasDescargar button h5 {
+  color: #000;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-size: 12px; /* Tamaño para móviles */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.descargarAplicacion article .formasDescargar button h3 {
+  color: #000;
+  text-align: center;
+  font-family: 'Lato Black', sans-serif;
+  font-size: 20px; /* Tamaño para móviles */
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.titulosPage,
+.pasosAlquilar {
+  text-align: center;
+  width: 80%;
+  padding: 5em 0;
+  margin: 0 auto;
+}
+
+.servicioCard {
+  text-align: center;
+  width: 80%;
+  padding: 2em 0;
+  margin: 0 auto;
+}
+
+.itemCard h4 {
+  color: #6a994e;
+  font-weight: normal;
+}
+
+.quienesSomos {
+  margin-top: 3em;
+  background-color: #232323;
+}
+
+.quienesSomos .dentro {
+  max-width: 80%;
+  text-align: center;
+  width: 80%;
+  padding: 2em 0;
+  margin: 0 auto;
+}
+
+.quienesSomos h2 {
+  color: white;
+}
+
+.quienesSomos img {
+  width: 10%;
+  height: auto;
+}
+
+.quienesSomos .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quienesSomos .dentro h3 {
+  padding-top: 2em;
+  color: #fff;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 200;
+  text-align: left;
+}
+
+.quienesSomos .dentro h4 {
+  padding-top: 2em;
+  color: #fff;
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 600;
+  text-align: left;
+}
+
+.quienesSomos .dentro .valores {
+  padding-left: 3em;
+  padding-top: 2em;
+  color: #fff;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 200;
+  text-align: left;
+}
+
+.quienesSomos .dentro img {
+  padding-top: 2em;
+  width: 5em;
+  height: auto;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .presentacion,
+  .servicios,
+  .descargarAplicacion,
+  .quienesSomos .dentro,
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presentacion img,
+  .descargarAplicacion img,
+  .quienesSomos .dentro img {
+    width: 80%;
+    height: auto;
+  }
+
+  .quienesSomos .dentro img {
+    width: 20%;
+    height: auto;
+  }
+
+  .presentacion img{
+    margin-top: 3em;
+  }
+
+  .formasDescargar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    height: auto;
+  }
+
+
+  .servicios .servicioCard,
+  .procesos section div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .descargarAplicacion article .formasDescargar button h5 {
+    font-size: 8px; /* Tamaño ligeramente más grande para tabletas */
+    
+  }
+
+  .descargarAplicacion article .formasDescargar button {
+    width: 90%;
+    margin-bottom: 2em;
+    
+  }
+
+  .descargarAplicacion article .formasDescargar button h3 {
+    font-size: 20px; /* Tamaño ligeramente más grande para tabletas */
+  }
+
+  
+
+  
+}

@@ -1,0 +1,103 @@
+
+.title {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+  
+    margin-top: 3em;
+  
+    text-align: center;
+  }
+
+  .full-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Utiliza la altura completa de la ventana gráfica */
+  }
+
+  .container-full {
+    flex: 1; /* Esto hará que .container-full ocupe todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.payment-form {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .form-section {
+    margin-top: 2em;
+    margin-bottom: 20px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  .input-group.half-width {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+  }
+  
+  .input-group.half-width:last-child {
+    margin-right: 0;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    background: #F80707;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 20%; 
+    display: block; 
+    margin-left: auto;
+    margin-top: 5em;
+    margin-right: auto;
+    margin-bottom: 5em;
+  }
+
+  .submit-button:disabled {
+    background: #767676;
+    cursor: not-allowed;
+  }
+  
+  /* Limpiar flotantes */
+  .input-group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 600px) {
+    .input-group.half-width {
+      float: none;
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  

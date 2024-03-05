@@ -1,0 +1,27 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<div class="full-container">
+  <app-admin-left-navbar/>
+  
+    <div class="contenedor">
+  
+        <div class="buttons">
+          <button class="cabeceraButton" [class.active]="botonActivo === 1" (click)="cambiarFuncion(1)">
+            Usuario
+          </button>
+  
+          <button class="cabeceraButton" [class.active]="botonActivo === 2" (click)="cambiarFuncion(2)">
+            Reservas
+          </button>
+        
+        </div>
+   
+      <app-all-user *ngIf="botonActivo == 1" [users]="user"> </app-all-user>
+      <app-reservas-user *ngIf="botonActivo == 2" [Reservation]="user"> </app-reservas-user>
+      
+    </div>
+  </div>
+  

@@ -1,0 +1,49 @@
+.station-table-container {
+    width: 90%;
+    overflow-x: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+  }
+.button-icon {
+    
+    width: 4em;
+    height: 4em;
+    background-color: #e0e0e0; /* Color de fondo inactivo (gris) */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: white; /* Color del texto */
+    border-radius: 20%; 
+  }
+  
+  .button-icon.active {
+    background-color: #000000; /* Color de fondo activo (negro) */
+  }
+  
+  /* Asegúrate de que los íconos tengan el mismo color que el fondo del botón */
+  .button-icon.active fa-icon {
+    color: white;
+  }
+  
+  .button-icon:not(.active) fa-icon {
+    color: black;
+  }
+  .search-container{
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+  }

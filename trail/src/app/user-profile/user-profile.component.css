@@ -1,0 +1,404 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.full-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Altura mínima del viewport */
+}
+
+.main-container {
+  flex: 1; /* Se expande para llenar el espacio disponible */
+  /* Resto de tus estilos... */
+  justify-content: center; /* Centrar elementos hijos horizontalmente */
+  
+  height: 100%;
+  width: 80%;
+  margin-left: auto; /* Corregido para centrar el contenedor */
+  margin-right: auto; /* Corregido para centrar el contenedor */
+}
+
+
+.dashboard {
+  display: flex;
+  justify-content: center; /* Centrar elementos hijos horizontalmente */
+  align-items: stretch; /* Para que los hijos se estiren verticalmente */
+
+  width: 80%;
+  margin-left: auto; /* Corregido para centrar el contenedor */
+  margin-right: auto; /* Corregido para centrar el contenedor */
+  gap: 20px;
+}
+
+
+
+.card,
+.card-last-reservation {
+  flex: 1; /* Esto hará que cada elemento hijo crezca para ocupar un espacio igual */
+  /* Otros estilos... */
+}
+
+
+
+.cad{
+  width: 100%;
+}
+
+.next-reservation{
+  width: 100%;
+}
+
+.title {
+  text-align: left;
+  padding-top: 1em;
+}
+
+.title h4 {
+  text-align: left;
+
+  padding-top: 2em;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.user-image {
+  position: relative;
+  width: 210px;
+  height: 170px;
+  margin-right: 5px;
+  cursor: pointer;
+  margin-left:5px;
+}
+
+.user-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%; /* Hace el overlay circular */
+}
+
+.user-image:hover .overlay-text {
+  opacity: 1;
+}
+
+.user-image:hover {
+  display: flex; /* Muestra el botón al pasar el ratón sobre la imagen */
+}
+
+.user-info {
+  flex-grow: 1;
+  align-items: center;
+  width: 100;
+
+  margin-left: 2em;
+}
+
+.user-info h2 {
+  margin: 0;
+}
+
+.user-info p {
+  margin: 5px 0;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.edit-form {
+  padding: 20px;
+  border-radius: 8px;
+  margin-left: 1em;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  margin-right: 10px;
+  color: #333;
+  font-size: 12px;
+  width: 30%; /* Ajustar según sea necesario */
+}
+
+.form-input {
+  flex-grow: 1;
+  padding: 2px; /* Reducir el padding para disminuir la altura */
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%; /* Aumentar el ancho */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn-save,
+.btn-cancel {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.btn-save {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+
+.card-last-reservation{ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffff;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  
+}
+
+.images{
+  position: relative;
+  width: 120px;
+  height: 140px;
+}
+
+.images img{
+  margin-right: auto;
+  margin-left:auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; 
+  object-fit: cover;
+  display: block;
+}
+
+.rent-button {
+  align-items: center  ;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  padding: 8px 25px;
+  background: #dc3545;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transition: all 200ms linear;
+}
+
+
+
+.last-reservation-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  pad: 3em;
+}
+
+.last-reservation-content img{
+
+  width: 180px ;
+  height: auto ; 
+  object-fit: cover ; 
+  border-radius: 10px ; 
+
+}
+
+
+.card-reservation-history {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reservation-history-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Asegúrate de que los ítems estén alineados verticalmente */
+}
+
+.reservation-history-content .vehicle-img {
+  width: 120px;
+  height: auto;
+  object-fit: cover; /* 'cover' es generalmente mejor para mantener las proporciones de la imagen */
+  border-radius: 10px;
+  margin-left: 5em;
+}
+
+.reservation-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el texto a la izquierda */
+  justify-content: space-between;
+  margin-left: 1em;
+  flex-grow: 1; /* Permite que este elemento crezca para llenar el espacio disponible */
+}
+
+.reservation-history-content {
+  background-color: #fff;
+  margin-top: 1em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+
+
+
+
+/* Estilos existentes */
+/* ... */
+
+/* Media query para pantallas pequeñas (por ejemplo, dispositivos móviles) */
+@media screen and (max-width: 768px) {
+  .dashboard {
+    flex-direction: column; /* Cambia la disposición a vertical en pantallas pequeñas */
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+
+  .user-image {
+    width: 100px; /* Reducir el tamaño de la imagen para pantallas más pequeñas */
+    height: 100px; /* Ajustar la altura de la imagen */
+  }
+
+  .form-row {
+    flex-direction: column; /* Cambia la disposición de las filas del formulario */
+    margin-bottom: 10px;
+  }
+
+  .form-row label {
+    width: 100%; /* Etiquetas toman el ancho completo */
+    margin-bottom: 5px; /* Espacio entre etiqueta y campo */
+  }
+
+  .form-input {
+    width: 100%; /* Input toma el ancho completo */
+  }
+
+  .form-actions {
+    flex-direction: column-reverse; /* Botones apilados verticalmente */
+    align-items: flex-start;
+  }
+
+  .btn-save, .btn-cancel {
+    width: 100%; /* Botones toman el ancho completo */
+    margin-bottom: 10px;
+  }
+
+  .last-reservation-content {
+    flex-direction: column; /* Cambia la disposición de los elementos a columna */
+    align-items: center; /* Alinea los elementos al centro */
+    display: block;
+  }
+
+  .last-reservation-content img {
+    width: 100px; /* La imagen toma el ancho completo */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-left: 0;
+   
+  }
+
+  .reservation-information {
+    align-items: flex-start; /* Alinea la información a la izquierda */
+  }
+
+  .reservation-history-content {
+    flex-direction: column; /* Los ítems se apilan verticalmente en pantallas pequeñas */
+    align-items: center; 
+  }
+
+  .reservation-history-content .vehicle-img {
+    align-items: center;
+    width: 100%; /* La imagen se expande para ocupar el ancho disponible */
+    max-width: 120px; /* Limita el tamaño máximo de la imagen */
+    margin-bottom: 1em; /* Agrega espacio debajo de la imagen */
+  }
+
+  .reservation-information {
+    align-items: center; /* Asegura que la información esté alineada a la izquierda */
+  }
+
+  .card-reservation-history {
+    width: 65%; /* Ocupa un poco más de espacio en pantallas pequeñas */
+  }
+
+  card-last-reservation img{ 
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+}
+
+
+

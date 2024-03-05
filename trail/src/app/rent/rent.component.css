@@ -1,0 +1,119 @@
+.image-container {
+  position: relative;
+  text-align: center; /* Centra el texto horizontalmente */
+  color: white; /* Color del texto */
+}
+
+.background-image {
+  width: 100%; /* Asegúrate de que la imagen cubra el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Asegura que no haya espacio extra alrededor de la imagen */
+}
+
+.text-overlay {
+  width: 60%;
+  position: absolute;
+  top: 50%; /* Centra el texto verticalmente */
+  left: 50%; /* Centra el texto horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta el centrado preciso */
+  color: white;
+}
+
+.text-overlay h2 {
+  font-size: 2em; /* Tamaño del título */
+  font-weight: bold; /* Peso del título */
+  margin-bottom: 0.5em;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.text-overlay p {
+  font-size: 1em; /* Tamaño del párrafo */
+  margin-bottom: 0.5em; /* Espaciado debajo del párrafo */
+}
+
+.progress-rent {
+  width: 20%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-button {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem; /* Centra el texto verticalmente en el botón */
+    text-align: center; /* Centra el texto horizontalmente en el botón */
+    border: none; /* Elimina el borde por defecto de los botones */
+    color: white; /* Texto blanco */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+  }
+  
+  .btn-primary {
+    background-color: #dc3545; /* Fondo rojo para pasos completados o activos */
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; /* Fondo gris para pasos no completados */
+  }
+  
+  .progress-bar {
+    height: 4px; /* Altura de la barra activa */
+    background-color: #dc3545; /* Color de la barra activa */
+    transition: width 0.3s; /* Transición suave del ancho */
+  }
+
+  
+
+
+  .title {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center; 
+  }
+  
+
+  .buttons {
+    
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; 
+    margin-top: 3em;
+    margin-bottom: 10em;
+  }
+
+
+  .buttons button {
+    align-items: center  ;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 25px;
+    background: #dc3545;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transition: all 200ms linear;
+  }
+
+
+  .buttons button:active {
+    transform: scale(0.97);
+  }
+  .buttons button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+  }
+
+  .blank-space{
+    margin-bottom: 5em;
+    width: 10em;
+    background-color: #fff;
+  }

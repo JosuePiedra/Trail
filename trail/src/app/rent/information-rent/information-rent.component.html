@@ -1,0 +1,22 @@
+<div class="reservation-container">
+    <div class="header">
+      <img src="../../../assets/imgs/imagen-reserva.png" alt="Confirmation Image" class="confirmation-image">
+      <h2>¡Felicidad tu reserva se a agendado!</h2>
+    </div>
+    <div class="reservation-details">
+      <p><strong>Fecha: </strong>{{reservation?.schedule}}</p>
+      <p><strong>Lugar de retiro: </strong> {{reservation?.pickupStation != null ? reservation?.pickupStation : reservation?.vehicle?.location}}</p>
+      <p><strong>Vehículo:</strong> {{reservation?.vehicleId}}</p>
+    <div class="steps">
+        <h3> <strong> Instrucciones para retirar el vehículo </strong></h3>
+        <p> Acercate a la estación o localización del vehículo</p>
+        <p> Escanea el código QR que se encuentra en nuestros vehículos </p>
+        <p>
+            Puedes escanearlo desde nuestra aplicación móvil, o desde esta misma
+            <a href="URL_DE_TU_PÁGINA_WEB" target="_blank" class="web-link">página web</a>.
+          </p>
+          
+    </div>
+    
+  </div>
+  

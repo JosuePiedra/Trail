@@ -1,0 +1,26 @@
+<div class="title"> 
+    <h2>Escoge una estación</h2>
+    <p>Escoge un centro donde retirarás tú vehículo</p>
+
+</div>
+
+
+<div class="button-container">
+   
+    <!-- Botón con ícono de cuadrícula -->
+    <button class="button-icon" [class.active]="activeButton === 'grid'" (click)="setActiveButton('grid')">
+      <fa-icon [icon]="faBorderAll"></fa-icon>
+    </button>
+
+     <!-- Botón con ícono de mapa -->
+     <button class="button-icon" [class.active]="activeButton === 'map'" (click)="setActiveButton('map')">
+      <fa-icon [icon]="faMap"></fa-icon>
+    </button>
+  
+  </div>
+
+
+  <app-map *ngIf="activeButton === 'map'" (stationSelected)="handleStationSelection($event)"  (vehicleSelected)="handleVehicleSelection($event)" class="map-container" [stations]="stations" [vehicles]="vehicles"></app-map>
+
+
+  <app-slider-station *ngIf="activeButton === 'grid'" (stationSelected)="handleStationSelection($event)" class="slider-container" [stations]="stations"></app-slider-station>

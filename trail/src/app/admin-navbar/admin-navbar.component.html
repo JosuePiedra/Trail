@@ -1,0 +1,68 @@
+<div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white static-top">
+  <div class="container-fluid">
+    <!-- <div>
+      <a class="navbar-brand" href="#">
+        <img src="../assets/imgs/trail.png" alt="..." height="36" />
+        <img src="../assets/imgs/nombreMarca.png" alt="..." height="36" />
+      </a>
+    </div> -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+      <div class="user-login">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ userName }}
+          </button>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">Perfil</button></li>
+            <li>
+              <button class="dropdown-item" type="button" (click)="logout()">
+                Cerrar Sesión
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>

@@ -1,0 +1,256 @@
+.title {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 3em;
+
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button-icon {
+  width: 4em;
+  height: 4em;
+  background-color: #e0e0e0; /* Color de fondo inactivo (gris) */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  border-radius: 20%; /* Color del texto */
+}
+
+.button-icon.active {
+  background-color: #000000; /* Color de fondo activo (negro) */
+}
+
+/* Asegúrate de que los íconos tengan el mismo color que el fondo del botón */
+.button-icon.active fa-icon {
+  color: white;
+}
+
+.button-icon:not(.active) fa-icon {
+  color: black;
+}
+
+/* Ajusta el tamaño del ícono si es necesario */
+fa-icon {
+  font-size: 1.5em;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.overflow {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  min-width: 100%; /* Cada tarjeta ocupa el 100% del contenedor */
+  /* ... otros estilos ... */
+}
+
+.card {
+  height: 300px;
+  background-color: #e0e1e2;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+}
+
+.no-right-margin {
+  margin-right: 0px;
+}
+
+.card span {
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.left,
+.right {
+  height: 30px;
+  width: 30px;
+  background-color: #0072bc;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left.disabled,
+.right.disabled {
+  background-color: #ccc;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.vehicle-carousel-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  
+}
+
+.vehicle-card {
+  width: 80%; /* Asegúrate de que esto sea tan ancho como desees que sea la tarjeta */
+  margin: 0 auto; /* Centra la tarjeta */
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
+  
+}
+
+.image{
+  width: 30%;
+  height: auto;
+  padding-right: 5em;
+
+}
+
+.vehicle-card .image img {
+  width: 100%;
+  height: auto;
+}
+
+.vehicle-information {
+  display: flex;
+  justify-content: left;
+}
+
+.vehicle-information .Title {
+  color: #8d8d8d;
+  font-family: Arial;
+  font-size: 11.462px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 2em;
+}
+
+.vehicle-information h3 {
+  color: #000;
+  font-family: Arial;
+  font-size: 11.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.vehicle-information .span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.cost {
+  color: #8d8d8d;
+  font-family: Arial;
+  font-size: 11.462px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  margin-top: 2em;
+}
+.information-vehicle-section {
+  width: 290.95px;
+  height: 328.861px;
+  flex-shrink: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  
+}
+
+.vehicle-name {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+}
+
+.vehicle-status {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.fa-star.checked {
+  color: #f5c518;
+}
+
+.vehicle-battery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.vehicle-year,
+.vehicle-rental-rate {
+  text-align: center;
+  padding: 5px 0;
+}
+
+.select-button {
+  border-radius: 7.008px;
+  border: 2.62px solid #f80707;
+  margin-right: auto;
+  margin-left: auto;
+  background: #f80707;
+  color: white;
+
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  display: block;
+  width: 80%;
+}
+
+.select-button:hover {
+  background-color: #c82333;
+}
+
+.selected {
+  border: 2px solid red;
+}
+
+.fa-star-half.checked {
+  color: #F4C434;
+}
+
+.fa-star {
+  color: #8d8d8d;
+}
+
+
+
+/* Add additional media queries and responsive design as needed */

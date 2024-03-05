@@ -1,0 +1,113 @@
+<app-navbar />
+
+<div class="loginTotal">
+  <div class="loginForm">
+    <img class="nombreMarca" src="../assets/imgs/nombreMarca.png" alt="">
+    <form [formGroup]="registerForm" (ngSubmit)="enviar()">
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input
+          [ngClass]="{ 'is-invalid': hasErrors('name', 'required') }"
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+        />
+        <div class="text-danger" *ngIf="hasErrors('name', 'required')">
+          Nombre requerido
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo</label>
+        <input
+          [ngClass]="{
+            'is-invalid':
+              hasErrors('email', 'required') || hasErrors('email', 'email')
+          }"
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+        />
+        <div class="text-danger" *ngIf="hasErrors('email', 'email')">
+          Email formato inválido
+        </div>
+        <div class="text-danger" *ngIf="hasErrors('email', 'required')">
+          Email requerido
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="dni" class="form-label">Cédula</label>
+        <input
+          [ngClass]="{ 'is-invalid': hasErrors('dni', 'required') }"
+          type="text"
+          class="form-control"
+          id="dni"
+          formControlName="dni"
+        />
+        <div class="text-danger" *ngIf="hasErrors('dni', 'required')">
+          Cédula requerida
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Contraseña</label>
+        <input
+          [ngClass]="{ 'is-invalid': hasErrors('password', 'required') }"
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+        />
+        <div class="text-danger" *ngIf="hasErrors('password', 'required')">
+          Contraseña requerida
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Confirma contraseña</label>
+        <input
+          [ngClass]="{ 'is-invalid': 
+          hasErrors('password_confirmation', 'required') || hasErrors('password_confirmation', 'passwordMismatch') }"
+          type="password"
+          class="form-control"
+          id="password_confirmation"
+          formControlName="password_confirmation"
+        />
+        <div class="text-danger" *ngIf="hasErrors('password_confirmation', 'required')">
+          Confirmación de la contraseña requerida
+        </div>
+        <div class="text-danger" *ngIf="hasErrors('password_confirmation', 'passwordMismatch')">
+            Las contraseñas deben coincidir
+          </div>
+      </div>
+
+      
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-red" routerLink="/register">
+          Registrarse
+        </button>
+      </div>
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-secondary" routerLink="/login">Iniciar sesión</button>
+      </div>
+
+    </form>
+    <hr />
+    <div class="redes-sociales">
+      <button><img src="../assets/imgs/iCloud.png" alt="" /></button>
+
+      <button><img src="../assets/imgs/Facebook.png" alt="" /></button>
+
+      <button><img src="../assets/imgs/Google.png" alt="" /></button>
+
+      <button><img src="../assets/imgs/X.png" alt="" /></button>
+    </div>
+  </div>
+
+  <img class="logo" src="../assets/imgs/trail.png" alt="" />
+</div>

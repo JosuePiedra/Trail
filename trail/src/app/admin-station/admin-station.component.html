@@ -1,0 +1,31 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<div class="full-container">
+  <app-admin-left-navbar />
+
+  <div class="contenedor">
+
+      <div class="buttons">
+        <button class="cabeceraButton" [class.active]="botonActivo === 1" (click)="cambiarFuncion(1)">
+          Estaciones
+        </button>
+
+        <button class="cabeceraButton" [class.active]="botonActivo === 2" (click)="cambiarFuncion(2)">
+          Agregar Estaciones
+        </button>
+        <button class="cabeceraButton" [class.active]="botonActivo === 3" (click)="cambiarFuncion(3)">
+          Estadisticas de Estaciones
+        </button>
+      
+      </div>
+ 
+  
+    <app-all-station *ngIf="botonActivo == 1" [stations]="stations"> </app-all-station>
+    <app-agg-statio *ngIf="botonActivo == 2" [stations]="stations"> </app-agg-statio>
+    <app-station-stats *ngIf="botonActivo == 3" [stations]="stations"> </app-station-stats>
+    
+  </div>
+</div>

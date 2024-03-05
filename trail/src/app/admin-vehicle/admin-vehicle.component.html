@@ -1,0 +1,33 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<div class="full-container">
+  <app-admin-left-navbar />
+
+  <div class="contenedor">
+
+      <div class="buttons">
+        <button class="cabeceraButton" [class.active]="botonActivo === 1" (click)="cambiarFuncion(1)">
+          Vehículos
+        </button>
+
+        <button class="cabeceraButton" [class.active]="botonActivo === 2" (click)="cambiarFuncion(2)">
+          Agregar Vehículo
+        </button>
+        <button class="cabeceraButton" [class.active]="botonActivo === 3" (click)="cambiarFuncion(3)">
+          Vehículos en el Mapa
+        </button>
+        <!-- <button class="cabeceraButton" [class.active]="botonActivo === 4" (click)="cambiarFuncion(4)">
+          Revisiones
+        </button> -->
+      </div>
+ 
+  
+    <app-all-vehicles *ngIf="botonActivo == 1" [vehicles]="vehicles"> </app-all-vehicles>
+    <app-agg-vehicles *ngIf="botonActivo == 2" [vehicles]="vehicles"> </app-agg-vehicles>
+    <app-map-vehicles *ngIf="botonActivo == 3" [vehicles]="vehicles"> </app-map-vehicles>
+    
+  </div>
+</div>

@@ -1,0 +1,237 @@
+<app-navbar> </app-navbar>
+<div class="full-container">
+  <div class="main-container">
+    <div class="dashboard">
+      <section class="user-information">
+        <div class="title">
+          <H4>Información personal</H4>
+        </div>
+
+        <div class="card">
+          <div class="user-image" (click)="triggerFileUpload()">
+            <img
+              *ngIf="imageUrl; else noImage"
+              [src]="imageUrl"
+              alt="User Image"
+            />
+            <div *ngIf="imageUrl" class="overlay-text">
+              <i class="fas fa-pencil-alt"></i>
+            </div>
+
+            <ng-template #noImage>
+              <div class="upload-button">Subir Foto</div>
+            </ng-template>
+            <input
+              type="file"
+              id="file-upload"
+              style="display: none"
+              (change)="onImageSelected($event)"
+            />
+          </div>
+
+          <div class="user-info" *ngIf="!editMode">
+            <h2>{{ user.name }}</h2>
+            <p><strong>Email: </strong>{{ user.email }}</p>
+            <p><strong>Edad: </strong>{{ user.age }}</p>
+            <p><strong>DNI: </strong>{{ user.dni }}</p>
+            <p><strong>Teléfono: </strong>{{ user.phone }}</p>
+            <p><strong>Dirección: </strong>{{ user.address }}</p>
+
+            <button (click)="toggleEditMode()">Editar</button>
+          </div>
+
+          <div *ngIf="editMode" class="edit-form">
+            <form [formGroup]="editForm" (ngSubmit)="updateUserInfo()">
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input
+                  formControlName="email"
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  class="form-input"
+                />
+              </div>
+
+              <div class="form-row">
+                <label for="dni">DNI</label>
+                <input
+                  formControlName="dni"
+                  id="dni"
+                  placeholder="DNI"
+                  class="form-input"
+                />
+              </div>
+              <div class="form-row">
+                <label for="phone">Teléfono</label>
+                <input
+                  formControlName="phone"
+                  id="phone"
+                  placeholder="Teléfono"
+                  class="form-input"
+                />
+              </div>
+              <div class="form-row">
+                <label for="address">Dirección</label>
+                <input
+                  formControlName="address"
+                  id="address"
+                  placeholder="Dirección"
+                  class="form-input"
+                />
+              </div>
+              <div class="form-actions">
+                <button
+                  type="button"
+                  class="btn-cancel"
+                  (click)="toggleEditMode()"
+                >
+                  Cancelar
+                </button>
+                <button type="submit" class="btn-save">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="next-reservation">
+        <div class="title">
+          <H4>Reservas actuales</H4>
+        </div>
+
+        <div class="card-last-reservation" *ngIf="!lastReservation">
+          <div class="images">
+            <img src="../../assets/imgs/image-loja.png" alt="Empty" />
+          </div>
+          <p>
+            <strong> Redefiniendo </strong> tu <strong> camino </strong> urbano,
+          </p>
+          <p><strong> simplificando </strong> tu <strong>movilidad</strong></p>
+          <button routerLink="/rent" class="rent-button">Reservar</button>
+        </div>
+
+        <div class="card-last-reservation" *ngIf="lastReservation">
+          <div class="last-reservation-content">
+            <img
+              class="vehicle-img"
+              *ngIf="lastReservation.vehicle?.type == 'scooter'"
+              [src]="
+                lastReservation.vehicle?.img ||
+                '../../assets/imgs/scooter-image1.png'
+              "
+              alt="Vehicle Image"
+            />
+            <img
+              class="vehicle-img"
+              *ngIf="lastReservation.vehicle?.type == 'bicycle'"
+              [src]="
+                lastReservation.vehicle?.img ||
+                '../../assets/imgs/bicycle-image1.png'
+              "
+              alt="Vehicle Image"
+            />
+
+            <div class="reservation-information">
+              <p>
+                Tú reserva será el
+                <strong>{{
+                  lastReservation.dateOfReservation | date : "dd/MM/yy"
+                }}</strong>
+              </p>
+              <p>
+                En el horario: <strong>{{ lastReservation.schedule }}</strong>
+              </p>
+              <p>
+                Deberás retirar el vehículo en:
+                <strong>{{ lastReservation.station?.name }}</strong>
+              </p>
+
+              <p>
+                Modelo del vehículo:
+                <strong>{{ lastReservation.vehicle?.model }}</strong>
+              </p>
+
+              <button class="rent-button" (click)="getCar()">
+                ¿Te encuentras ahí?
+              </button>
+            </div>
+
+            <!--  -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="reservation-history">
+      <div class="title">
+        <H4>Historial de reservas</H4>
+      </div>
+
+      <div
+        class="card-reservation-history"
+        *ngFor="let reservation of paginatedReservations"
+      >
+        <div class="reservation-history-content">
+          <img
+            class="vehicle-img"
+            *ngIf="reservation.vehicle?.type == 'scooter'"
+            [src]="
+              reservation.vehicle?.img || '../../assets/imgs/scooter-image1.png'
+            "
+            alt="Vehicle Image"
+          />
+          <img
+            class="vehicle-img"
+            *ngIf="reservation.vehicle?.type == 'bicycle'"
+            [src]="
+              reservation.vehicle?.img || '../../assets/imgs/bicycle-image1.png'
+            "
+            alt="Vehicle Image"
+          />
+
+          <div class="reservation-information">
+            <p>
+              Tú reserva fue el
+              <strong>{{
+                reservation.dateOfReservation | date : "dd/MM/yy"
+              }}</strong>
+            </p>
+            <p>
+              En el horario: <strong>{{ reservation.schedule }}</strong>
+            </p>
+            <p>
+              Deberás retirar el vehículo en:
+              <strong>{{ reservation.station?.name }}</strong>
+            </p>
+
+            <p>
+              Modelo del vehículo:
+              <strong>{{ reservation.vehicle?.model }}</strong>
+            </p>
+          </div>
+
+          <img
+            class="station-img"
+            [src]="
+              reservation.station?.img == null ? '../../assets/imgs/estacion1.png' : reservation.station?.img
+            "
+            alt="Station Image"
+          />
+
+
+
+        </div>
+      </div>
+    
+      <!-- Botones de paginación con flechas -->
+<div class="pagination">
+  <button (click)="changePage(-1)" [disabled]="currentPage <= 1">← Anterior</button>
+  <button (click)="changePage(1)" [disabled]="currentPage >= totalPages">Siguiente →</button>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<app-fotter />

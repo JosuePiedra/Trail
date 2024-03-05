@@ -1,0 +1,126 @@
+<div class="full-container">
+  <div class="button-container">
+    <button
+      class="button-icon"
+      [class.active]="activeButton === 'bicycle'"
+      (click)="setActiveButton('bicycle')"
+    >
+      <fa-icon [icon]="faBicycle"></fa-icon>
+    </button>
+
+    <button
+      class="button-icon"
+      [class.active]="activeButton === 'scooter'"
+      (click)="setActiveButton('scooter')"
+    >
+      <span class="material-icons">electric_scooter</span>
+    </button>
+  </div>
+  <form [formGroup]="vehicleForm" class="m-3">
+    <!-- Fabricante -->
+    <div class="row mb-3 align-items-center">
+      <div class="col-md-4">
+        <label for="manufacturerSelect">Fabricante</label>
+      </div>
+      <div class="col-md-6">
+        <select *ngIf="!manufacturerEditMode" class="form-control" formControlName="manufacturer">
+          <option *ngFor="let marca of marcas" [value]="marca">{{ marca }}</option>
+        </select>
+        <input *ngIf="manufacturerEditMode" type="text" class="form-control" formControlName="manufacturer" placeholder="Ingresa el nombre del fabricante"/>
+      </div>
+      <div class="col-md-2">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="manufacturerEditSwitch" (click)="changeStatusManufacturer()"/>
+          <label class="form-check-label" for="manufacturerEditSwitch">Agregar fabricante</label>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modelo -->
+    <div class="row mb-3 align-items-center">
+      <div class="col-md-4">
+        <label for="modelSelect">Modelo</label>
+      </div>
+      <div class="col-md-6">
+        <select *ngIf="!modelEditMode" class="form-control" formControlName="model">
+          <option *ngFor="let modelo of modelos" [value]="modelo">{{ modelo }}</option>
+        </select>
+        <input *ngIf="modelEditMode" type="text" class="form-control" formControlName="model" placeholder="Ingresa el modelo"/>
+      </div>
+      <div class="col-md-2">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="modelEditSwitch" (click)="changeStatusModel()"/>
+          <label class="form-check-label" for="modelEditSwitch">Agregar modelo</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-3 align-items-center">
+      <div class="col-md-4">
+        <label for="stationSelected">Estación</label>
+      </div>
+      <div class="col-md-6">
+        <select *ngIf="!modelEditMode" class="form-control" formControlName="station">
+          <option *ngFor="let station of stations" [value]="station.name">{{ station.name}}</option>
+        </select>
+        
+      </div>
+    
+    </div>
+
+
+  
+    <!-- Velocidad Máxima -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="maxVelocityInput">Velocidad Máxima</label>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" formControlName="maxVelocity" id="maxVelocityInput" placeholder="Ingrese la velocidad máxima"/>
+      </div>
+    </div>
+  
+    <!-- Año de Fabricación -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="manufacturingAgeInput">Año de Fabricación</label>
+      </div>
+      <div class="col-md-6">
+        <input type="number" class="form-control" formControlName="manufacturingAge" id="manufacturingAgeInput" placeholder="Ingrese el año de fabricación"/>
+      </div>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="imageUpload">Subir imagen</label>
+      </div>
+      <div class="col-md-6">
+        <input
+          type="file"
+          class="form-control"
+          id="imageUpload"
+          (change)="onImageSelected($event)"
+        />
+      </div>
+    </div>
+    
+  
+
+    <div class="row mb-3">
+      <div class="col-md-10 offset-md-2">
+        <button
+          type="button"
+          class="btn btn-custom-red me-2"
+          (click)="onSubmit()"
+          [disabled]="!vehicleForm.valid"
+        >
+          Enviar
+        </button>
+      </div>
+    </div>
+
+  </form>
+  
+</div>

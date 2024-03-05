@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "trail-3c42c": {
+      "hosting": {
+        "trail": [
+          "trail-3c42c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "trail-3c42c"
+  }
+}

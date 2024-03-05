@@ -1,0 +1,67 @@
+<!-- Asegúrate de incluir FontAwesome -->
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+/>
+
+<div class="full-container">
+  <nav class="navbar">
+    <div class="navbar-header">
+      <img src="../../assets/imgs/trail.png" alt="" />
+    </div>
+    <ul class="navbar-links">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink=""
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ><i class="fas fa-home"></i>Home</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/admin-vehicle"
+          routerLinkActive="active"
+          ><i class="fas fa-car"></i>Vehículos</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/admin-station"
+          routerLinkActive="active"
+          ><i class="fas fa-charging-station"></i>Estaciones</a
+        >
+       
+      <!-- </li>
+      <li class="nav-item">
+        <a
+        class="nav-link"
+        routerLink="fasf"
+        routerLinkActive="active"
+        ><i class="fas fa-calendar-alt"></i>Horarios</a
+      >
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin-user" routerLinkActive="active"
+          ><i class="fas fa-users-cog"></i>Usuarios</a
+        >
+ 
+        
+      </li>
+    </ul>
+
+    <div class="user-initials">
+      {{ getUserInitials() }}
+    </div>
+    <p>{{ userName }}</p>
+
+    <div class="logout-link">
+      <a href="" (click)="logout()">Cerrar sesión</a>
+    </div>
+  </nav>
+</div>

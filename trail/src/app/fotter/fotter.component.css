@@ -1,0 +1,83 @@
+.site-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 5em;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 'row' no es un valor válido para 'align-items' */
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap; /* Permite a los elementos pasar a la siguiente línea en pantallas pequeñas */
+}
+
+.footer-brand,
+.footer-links,
+.footer-social {
+  display: flex;
+  align-items: center;
+  flex-basis: 100%; /* Asegura que cada sección ocupe el ancho completo en dispositivos móviles */
+}
+
+.footer-links a,
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.footer-links a:not(:last-child),
+.footer-social a:not(:last-child) {
+  margin-right: 20px;
+}
+
+.footer-social img {
+  width: 25px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.footer-brand img {
+  height: 30px;
+  width: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 768px) {
+  .footer-brand,
+  .footer-links,
+  .footer-social {
+    flex-basis: auto; /* Restablece la base flexible para permitir el espaciado original */
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media (max-width: 767px) {
+  .footer-content {
+    justify-content: center;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-social {
+    justify-content: center;
+    margin-bottom: 10px; /* Añade espacio entre elementos cuando se apilan verticalmente */
+  }
+
+  .footer-links a,
+  .footer-social a {
+    margin-right: 10px; /* Reduce el margen para dispositivos más pequeños */
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column; /* Apila los elementos verticalmente en dispositivos muy pequeños */
+  }
+}

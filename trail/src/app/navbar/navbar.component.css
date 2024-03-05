@@ -1,0 +1,84 @@
+.bg-white {
+    background-color: #fff; 
+}
+
+.navbar-brand {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-red {
+    background-color: #DE082E;
+    border-color: #DE082E;
+    
+}
+.btn-red:active {
+    background-color: #AB0724; 
+    border-color: #AB0724;
+}
+
+.btn-white {
+    background-color: #ffff;
+    border-color: #ffff;
+    color: black;
+    
+}
+.btn-white:active {
+    background-color: #DE082E; 
+    border-color: #DE082E;
+}
+
+
+.btn-white:hover {
+    color:  #fff;
+    background-color: #DE082E; 
+    border-color: #DE082E;
+}
+
+.login-register {
+    margin-left: 17em;
+}
+.user-login {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+    margin-left: 17em;
+  }
+  
+.user-login H3{
+    color: black;
+    align-items: center;
+    margin-top: 5px;
+    margin: 0;
+}
+
+.nav-link {
+    display: inline-block;
+    text-decoration: none; 
+    color: black; 
+    padding-bottom: 5px; 
+    transition: border-bottom 0.3s; 
+    border-bottom: 2px solid transparent; 
+    margin-right: 20px;
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    /* Estilos para hover y el enlace activo */
+    border-bottom: 2px solid red; /* Subrayado rojo */
+  }
+  
+@media (max-width: 769px) {
+
+    .login-register {
+        margin-left: 0em;
+    }
+    
+
+    .user-login {
+        
+        align-items: 0em; 
+        gap: 0em;
+        margin-left:0em;
+      }
+
+}

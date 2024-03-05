@@ -1,0 +1,62 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+}
+
+
+
+.buttons {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.cabeceraButton {
+
+    margin-left: 2em;
+     
+    padding: 10px 20px; 
+    border-radius: 0.5em; 
+    border: 0.5px solid #f9f9f9;
+    transition: border-color ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
+    -webkit-transition: border-color ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
+  }
+  
+.cabeceraButton:hover {
+    background-color: #DE082E; 
+    color: #fff; 
+    border: 0.5px solid #bb0728; 
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #DE082E;
+    -webkit-box-shadow: inset 0
+  }
+  .cabeceraButton.active {
+    color: #fff; 
+    background-color: #DE082E; 
+  }
+
+
+  .full-container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: auto;
+    overflow-x: hidden;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+	width: 100vw;
+    text-align: center;
+    
+}
+
+.buttons{
+    margin-top: 2em;
+}
+
+

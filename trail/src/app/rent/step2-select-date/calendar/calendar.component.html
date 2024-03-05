@@ -1,0 +1,9 @@
+<mat-calendar
+  class="custom"
+  (selectedChange)="onDateSelected($event)"
+  [headerComponent]="exampleHeader"
+  [(selected)]="date"
+  
+></mat-calendar>
+
+{{date}}

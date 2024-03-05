@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="steps">
+      <div class="progress-bar">
+        <div class="indicator" [style.width]="calculateProgressWidth()"></div>
+      </div>
+      <div *ngFor="let step of [].constructor(totalSteps); let i = index" class="circle" [class.active]="i < currentStep" (click)="navigateToStep(i+1)">
+        {{ i+1 }}
+      </div>
+      
+    </div>
+  </div>
+  

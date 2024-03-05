@@ -1,0 +1,100 @@
+
+.navbar-brand {
+    display: flex;
+    gap: 20px;
+    margin-left: 5em;
+}
+
+.btn-outline-success {
+    border-color: #DE082E; /* Rojo deseado */
+  }
+  
+
+.btn-red {
+    background-color: #DE082E;
+    border-color: #DE082E;
+    
+}
+.btn-red:active {
+    background-color: #AB0724; 
+    border-color: #AB0724;
+}
+
+.btn-white {
+    background-color: #ffff;
+    border-color: #ffff;
+    color: black;
+    
+}
+.btn-white:active {
+    background-color: #DE082E; 
+    border-color: #DE082E;
+}
+
+
+.btn-white:hover {
+    color:  #fff;
+    background-color: #DE082E; 
+    border-color: #DE082E;
+}
+
+.login-register {
+    margin-left: 17em;
+}
+.user-login {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+    margin-left: 17em;
+    margin-right: 5em;
+  }
+  
+.user-login H3{
+    color: black;
+    align-items: center;
+    margin-top: 5px;
+    margin: 0;
+}
+
+
+.nav-link {
+    
+    display: inline-block;
+    text-decoration: none; 
+    color: black; 
+    padding-bottom: 5px; 
+    transition: border-bottom 0.3s; 
+    border-bottom: 2px solid transparent; 
+    margin-right: 20px;
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    /* Estilos para hover y el enlace activo */
+    border-bottom: 2px solid red; /* Subrayado rojo */
+  }
+  
+  /* Cambia el color del borde y el texto del botón de búsqueda a rojo */
+.btn-outline-success {
+    color: #DE082E; /* Color del texto */
+    border-color: #DE082E; /* Color del borde */
+    background-color: transparent; /* Fondo transparente */
+  }
+  
+  /* Cambia el color de fondo y el texto del botón de búsqueda cuando se hace clic o se enfoca */
+  .btn-outline-success:active,
+  .btn-outline-success:focus,
+  .btn-outline-success:hover {
+    color: #FFFFFF; /* Color del texto */
+    background-color: #DE082E; /* Color de fondo */
+    border-color: #DE082E; /* Color del borde */
+  }
+  
+
+
+@media (max-width: 769px) {
+
+    .login-register {
+        margin-left: 0em;
+    }
+
+}

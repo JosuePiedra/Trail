@@ -1,0 +1,64 @@
+<app-navbar> </app-navbar>
+
+<div class="image-container" *ngIf="currentStep == 1">
+  <img src="../assets/imgs/bannerRent.png" class="background-image" />
+  <div class="text-overlay">
+    <p>Descubre más, contamina menos. Así es viajar con TRAiL.</p>
+    <h2>Comienza tu reserva</h2>
+    <p>En 3 simples pasos</p>
+  </div>
+</div>
+
+<app-progress-stepper
+  [currentStep]="currentStep"
+  (stepChanged)="updateSteps($event)"
+  *ngIf="rentFinish != true"
+
+></app-progress-stepper>
+
+<div *ngIf="currentStep == 1 && rentFinish != true && step3 == true">
+
+  <app-step1-select-station  (vehicleSelected) = "onVehicleSelected($event)"  (stationSelected) = "onStationSelected($event)" ></app-step1-select-station>
+  <!-- <app-information-rent [reservation]="reservationData"> </app-information-rent> -->
+  
+</div>
+
+<div *ngIf="currentStep == 2 && rentFinish != true">
+  <app-step2-select-date (hourSelected)="onTimeSlotSelected($event)">
+  </app-step2-select-date>
+</div>
+
+<div *ngIf="currentStep == 3 && reservationDone == false && rentFinish != true && step3 == true">
+  <app-step3-select-vehicle (vehicleSelected)="onVehicleSelected($event)">
+  </app-step3-select-vehicle>
+</div>
+
+<div *ngIf="reservationDone != false && rentFinish != true || step3 == false && currentStep != 2">
+  <app-step4-payment (paymentCompleted)="handlePaymentCompleted()"> </app-step4-payment>
+</div>
+
+<div *ngIf="rentFinish == true">
+  <app-information-rent [reservation]="reservationData"> </app-information-rent>
+</div>
+
+<div class="buttons" *ngIf="currentStep != 3 && reservationDone == false  && rentFinish != true && step3 == true ">
+  <button (click)="updateSteps(currentStep - 1)" [disabled]="currentStep === 1">
+    Anterior
+  </button>
+
+  <button
+    (click)="updateSteps(currentStep + 1)"
+    [disabled]="!canProceedToNextStep()"
+  >
+    Siguiente
+  </button>
+</div>
+
+<div class="buttons" *ngIf="currentStep == 3 && reservationDone == false && rentFinish != true && step3 == true">
+  <button (click)="updateSteps(currentStep - 1)">Anterior</button>
+  <button  [disabled]="!canProceedToNextStep()" (click)="this.rentCompleted()">
+    Continuar
+  </button>
+</div>
+
+<app-fotter />

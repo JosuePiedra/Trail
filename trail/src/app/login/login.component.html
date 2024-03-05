@@ -1,0 +1,66 @@
+<app-navbar/>
+
+ <div class="loginTotal">
+  <div class="loginForm">
+    
+    <form [formGroup]="loginForm" (ngSubmit)="enviar()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo</label>
+        <input
+          [ngClass]="{
+            'is-invalid':
+              hasErrors('email', 'required') || hasErrors('email', 'email')
+          }"
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+        />
+        <div class="text-danger" *ngIf="hasErrors('email', 'email')">
+          Email formato inválido
+        </div>
+        <div class="text-danger" *ngIf="hasErrors('email', 'required')">
+          Email requerido
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Contraseña</label>
+        <input
+          [ngClass]="{ 'is-invalid': hasErrors('password', 'required') }"
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+        />
+        <div class="text-danger" *ngIf="hasErrors('password', 'required')">
+          Contraseña requerida
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-red" (click)="login()" >Iniciar sesión</button>
+      </div>
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-secondary" routerLink="/register">Registrarse</button>
+      </div>
+    </form>
+    <hr>
+    <div class="redes-sociales">
+        <button> <img src="../assets/imgs/iCloud.png" alt=""></button>
+
+        <button> <img src="../assets/imgs/Facebook.png" alt=""></button>
+
+        <button> <img src="../assets/imgs/Google.png" alt=""></button>
+
+        <button> <img src="../assets/imgs/X.png" alt=""></button>
+
+    </div>
+  </div> 
+  
+
+  <img class="logo" src="../assets/imgs/trail.png" alt="">
+</div> 
+
+
+

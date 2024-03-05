@@ -1,0 +1,140 @@
+
+<app-navbar *ngIf="userRol == 'user'"></app-navbar>
+
+
+<div *ngIf="userRol == 'user' ">
+<section class="presentacion">
+  <div>
+    <h3>Renta, explora,</h3>
+    <h2>Apoya el planeta</h2>
+    <h4>
+      En Trail, redefinimos la manera de moverte por la ciudad. Ofrecemos una
+      experiencia única y eco-amigable a través de nuestro servicio de alquiler
+      de scooters y bicicletas eléctricas. Con estaciones convenientemente
+      ubicadas, Trail hace que descubrir la ciudad y llegar a tu destino sea una
+      experiencia ágil, divertida y, sobre todo, verde.
+    </h4>
+
+    <button class="Rentar"> ¡Renta Ya!</button>
+  </div>
+  <img src="../assets/imgs/scooterBicicleta.png" />
+</section>
+
+<section class="titulosPage">
+  <h2>La mejor opción de transporte</h2>
+
+  <h5>
+    Trail es la mejor opción para moverte a la ciudad sin necesidad de aumentar
+    tú huella ecológica. Contamos con características que nos hacen los mejores
+  </h5>
+</section>
+
+<section class="servicios">
+  <article class="servicioCard">
+    <img src="../assets/imgs/pagoSencilloSeguro.png" />
+    <h4>Pago sencillo y seguro</h4>
+    <h5>Facilitamos tú movilidad con un sistema de pago intuitivo y seguro.</h5>
+  </article>
+
+  <article class="servicioCard">
+    <img src="../assets/imgs/estacionesCercanas.png" />
+    <h4>Estaciones cercanas</h4>
+    <h5>Tenemos estaciones ubicadas en puntos clave de la ciudad</h5>
+  </article>
+
+  <article class="servicioCard">
+    <img src="../assets/imgs/vehículosPerfectoEstado.png" />
+    <h4>Vehículos en perfecto estado</h4>
+    <h5>Ofrecemos una experiencia de alquiler superior y en óptimo estado</h5>
+  </article>
+</section>
+
+<section class="pasosAlquilar">
+  <h2>Fácil y rápido</h2>
+
+  <p>
+    Trail es la mejor opción para moverte a la ciudad sin necesidad de aumentar
+    tú huella ecológica. Contamos con características que nos hacen los mejores
+  </p>
+</section>
+
+<div class="procesos">
+
+
+  <img src="../assets/imgs/pasos.png" alt="">
+  <button class="Rentar">¡Renta Ya!</button>
+</div>
+
+<section class="descargarAplicacion">
+  <article>
+    <h2>
+      Descarga la aplicación móvil <br />
+      gratuita de TraiL
+    </h2>
+
+    <div class="formasDescargar">
+      <div class="descargarAppleStore">
+        <button>
+          <img src="../assets/imgs/apple.png" alt="" />
+          <div>
+            <h5>Descargar</h5>
+            <h3>Apple Store</h3>
+          </div>
+        </button>
+      </div>
+
+      <div class="descargarPlayStore">
+        <button>
+          <img src="../assets/imgs/playStore.png" alt="" />
+          <div>
+            <h5>Descargar</h5>
+            <h3>Play Store</h3>
+          </div>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <img src="../assets/imgs/trailApp.png" />
+</section>
+
+<section class="quienesSomos">
+  <section class="dentro">
+    <div class="header">
+      <h2>¿Quiénes somos?</h2>
+      <img src="../assets/imgs/logoCompletoBlanco.png" />
+    </div>
+
+    <h3>
+      En Trail, nos impulsa la visión de un futuro más verde y accesible para
+      todos. Nuestro servicio de alquiler de scooters y bicicletas eléctricas no
+      es solo una opción de transporte; es un paso adelante en la creación de
+      ciudades más sostenibles y comunidades más conectadas. Nos esforzamos por
+      ofrecer una alternativa de movilidad que sea no solo conveniente y fácil
+      de usar, sino que también contribuya a la salud de nuestro planeta.
+    </h3>
+
+    <h4>Nuestros valores</h4>
+
+    <h3 class="valores">
+      La integridad, la innovación y la inclusión dirigen cada decisión que
+      tomamos. Creemos firmemente que cada trayecto cuenta, y por eso, cada
+      vehículo de nuestra flota refleja nuestra promesa de calidad y nuestra
+      pasión por el servicio excepcional.
+    </h3>
+
+    <h4>Empresas aliadas</h4>
+
+    <img src="../assets/imgs/nodo.png" />
+  </section>
+
+
+  <app-fotter/>
+
+  
+</section>
+</div>
+
+
+
+<app-admin-pag *ngIf="userRol == 'admin'"></app-admin-pag>

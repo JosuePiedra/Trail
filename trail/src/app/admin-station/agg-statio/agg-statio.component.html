@@ -1,0 +1,98 @@
+<div class="full-container">
+  <form [formGroup]="stationForm" class="m-3">
+    <!-- Velocidad Máxima -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="nameStation">Nombre estación</label>
+      </div>
+      <div class="col-md-6">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          id="nameStation"
+          placeholder="Ingrese el nombre"
+        />
+      </div>
+    </div>
+
+    
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <!-- Elimina formControlName de aquí -->
+        <label for="totalCapacity">Capacidad total</label>
+      </div>
+      <div class="col-md-6">
+        <input
+          type="number"
+          class="form-control"
+          formControlName="totalCapacity"
+          id="totalCapacity"
+          placeholder="Ingrese la capcidad máxima"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="location">Localizaicón</label>
+      </div>
+      <div class="col-md-6">
+        <input
+          type="string"
+          class="form-control"
+          formControlName="location"
+          id="location"
+          placeholder="Ingrese las coordenadas"
+        />
+      </div>
+    </div>
+
+    <div class="map" id="map"></div>
+
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="address">Dirección</label>
+      </div>
+      <div class="col-md-6">
+        <input
+          type="string"
+          class="form-control"
+          formControlName="address"
+          id="address"
+          placeholder="Ingrese la dirección"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="imageUpload">Subir imagen</label>
+      </div>
+      <div class="col-md-6">
+        <input
+          type="file"
+          class="form-control"
+          id="imageUpload"
+          (change)="onImageSelected($event)"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-10 offset-md-2">
+        <button
+          type="button"
+          class="btn btn-custom-red me-2"
+          (click)="onSubmit()"
+          [disabled]="!stationForm.valid"
+        >
+          Enviar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+

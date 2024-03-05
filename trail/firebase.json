@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "trail",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-central1"
+      }
+    }
+  ]
+}

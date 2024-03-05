@@ -1,0 +1,87 @@
+/* styles.css */
+.navbar-header img {
+  width: auto;
+  height: 5em;
+  margin-top: 1em;
+}
+
+.navbar-links {
+  flex-grow: 1;
+  list-style: none;
+  padding: 0;
+
+  margin-top: 2em;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #232323;
+  display: block;
+  padding: 1.7em;
+  font-weight: 700;
+  transition: background-color 0.3s; /* Suaviza la transición de colores */
+}
+
+.nav-link:hover , .nav-link.active {
+  color: #DE082E;
+  border-left: 3px solid #DE082E; /* Añade un borde izquierdo sólido rojo */
+  padding-left: calc(1.7em - 3px); 
+  
+}
+
+.navbar a i {
+  margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+.full-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: auto;
+  overflow-x: hidden;
+}
+
+.navbar {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 100vh;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.body-container {
+  width: 100%;
+  
+  
+}
+
+.body-container .info{
+
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.user-initials {
+  width: 50px; /* Tamaño del círculo */
+  height: 50px; /* Tamaño del círculo */
+  border-radius: 50%; /* Hace que sea un círculo */
+  background-color: #DE082E; /* Color de fondo */
+  color: white; /* Color del texto */
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto */
+  justify-content: center; /* Centra horizontalmente el texto */
+  font-weight: bold; /* Hace que las iniciales sean negritas */
+  margin-right: 10px; /* Margen a la derecha */
+  font-size: 1em; /* Tamaño del texto */
+}
+
+
+
+
+/* Estilos adicionales para los iconos */
+.fas {
+  width: 25px; /* Asegura que todos los iconos tengan el mismo ancho */
+}

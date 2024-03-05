@@ -1,0 +1,87 @@
+<!-- some.component.html -->
+<app-navbar></app-navbar>
+<div class="full-container" *ngIf="!rentValidate">
+  <div class="dropdown-center">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      {{ currentDevice ? currentDevice.label : "Selecciona una cámara" }}
+    </button>
+    <ul class="dropdown-menu">
+      <li *ngFor="let device of availableDevices">
+        <a
+          class="dropdown-item"
+          (click)="onDeviceSelectChange(device.deviceId)"
+          >{{ device.label }}</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <div class="camara-container" 
+  >
+    <zxing-scanner
+      [torch]="torchEnabled"
+      [(device)]="currentDevice!"
+      (scanSuccess)="onScanSucces($event)"
+      [formats]="formatsEnabled"
+      [tryHarder]="tryHarder"
+      (permissionResponse)="onHasPermission($event)"
+      (camerasFound)="onCamerasFound($event)"
+      (torchCompatible)="onTorchCompatible($event)"
+    ></zxing-scanner>
+  </div>
+
+  <div class="camara-container-permisson" *ngIf="hasPermission === undefined">
+    <h2>Pidiendo los permisos necesarios.</h2>
+
+    <blockquote>
+      Si a tú dispositivo no se le detecta ninguna cámara, no se pedirán los permisos. 
+    </blockquote>
+  </div>
+
+  <div class="camara-container-permisson" *ngIf="hasPermission === false">
+    <h2>
+     Porfavor, acepa los permisos para acceder a tú cámara, de otra forma, no podrás escanear el código.
+    </h2>
+  </div>
+
+  <div class="camara-container-permisson" *ngIf="hasDevices === undefined  && check == true">
+    <h2>No se pudieron revisar los dispositivos </h2>
+
+    <blockquote>Esto puede ser causados por falta de permisos.</blockquote>
+  </div>
+
+  <div class="camara-container-permisson" *ngIf="hasDevices === false && check == true">
+    <h2>No se encontraron dispositivos.</h2>
+
+    <blockquote>
+      Creemos que tus dispositivo no cuenta con cámaras.
+    </blockquote>
+  </div>
+
+  <div class="scann-instructions">
+    <h3 >Pasos para escaner el código QR</h3>
+    <p>Verifica que estas en la ubicación donde agendaste tú vehículo</p>
+    <p>Acercate el vehículo, en el maniuobro encontrarás el código</p>
+    <p>¡Acerca la cámara y disfruta!</p>
+  </div>
+
+
+  
+</div>
+
+<div class="reservation-succesful" *ngIf="rentValidate">
+  <img src="../../../assets/imgs/images-succesful-rent.png" alt="" />
+  <H2> ¡Felicidades! ¡Ya puedes disfrutar de tu viaje! </H2>
+
+  <h3>¡Gracias por confiar en nosotros!</h3>
+
+  <h4>¡No olvides tú hora de entrega!</h4>
+</div>
+
+
+<app-fotter></app-fotter>

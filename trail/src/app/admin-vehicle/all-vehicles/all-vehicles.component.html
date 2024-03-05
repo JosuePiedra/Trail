@@ -1,0 +1,118 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+
+
+<div *ngIf="!isEditRoute">
+<div class="button-container">
+  <button
+    class="button-icon"
+    [class.active]="activeButton === 'bicycle'"
+    (click)="setActiveButton('bicycle')"
+  >
+    <fa-icon [icon]="faBicycle"></fa-icon>
+  </button>
+
+  <button
+    class="button-icon"
+    [class.active]="activeButton === 'scooter'"
+    (click)="setActiveButton('scooter')"
+  >
+    <span class="material-icons">electric_scooter</span>
+  </button>
+</div>
+
+<div class="search-container">
+  <input
+    matInput
+    placeholder="Buscar por ID"
+    class="form-control me-2"
+    type="search"
+    
+    (keyup)="applyFilter($event)"
+  />
+</div>
+
+<div class="vehicle-table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let vehicle">{{ vehicle._id }}</td>
+    </ng-container>
+    <!-- Definir las columnas de la tabla aquí -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let vehicle">{{ vehicle.type }}</td>
+    </ng-container>
+
+    <!-- vehicle-table.component.html -->
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef>State</th>
+      <td mat-cell *matCellDef="let vehicle">
+        <span
+          [ngClass]="{
+            'state-available': vehicle.state === 'available',
+            'state-in-use': vehicle.state === 'inUse',
+            'state-maintenance': vehicle.state === 'maintenance'
+          }"
+          >{{ vehicle.state }}</span
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef>Modelo</th>
+      <td mat-cell *matCellDef="let vehicle">{{ vehicle.model }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="manufacturer">
+      <th mat-header-cell *matHeaderCellDef>Marca</th>
+      <td mat-cell *matCellDef="let vehicle">{{ vehicle.manufacturer }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="manufacturingAge">
+      <th mat-header-cell *matHeaderCellDef>Año</th>
+      <td mat-cell *matCellDef="let vehicle">{{ vehicle.manufacturingAge }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="maxVelocity">
+      <th mat-header-cell *matHeaderCellDef>Velocidad(Máx)</th>
+      <td mat-cell *matCellDef="let vehicle">{{ vehicle.maxVelocity }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="battery">
+      <th mat-header-cell *matHeaderCellDef>Bateria</th>
+      <td mat-cell *matCellDef="let vehicle">{{ vehicle.battery }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let vehicle">
+        <button mat-icon-button (click)="updateVehicle(vehicle)" class="update-button">
+          <i class="fas fa-pencil-alt"></i>
+        </button>
+        <button mat-icon-button (click)="deleteVehicle(vehicle._id)" class="delete-button">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+
+<div class="charts-container">
+  <ngx-charts-number-card
+    [view]="[700, 400]"
+    [scheme]="colorScheme"
+    [results]="single"
+    [cardColor]="cardColor"
+    (select)="onSelect($event)">
+  </ngx-charts-number-card>
+</div>
+</div>
+
+<router-outlet></router-outlet>

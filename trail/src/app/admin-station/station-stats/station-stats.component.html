@@ -1,0 +1,35 @@
+<div class="full-container">
+  <div>
+    <ngx-charts-bar-vertical
+      [view]="[700, 400]"
+      [scheme]="colorScheme"
+      [results]="single"
+      [gradient]="false"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Categorías'"
+      [yAxisLabel]="'Ventas'"
+      (select)="onSelect($event)"
+    >
+    </ngx-charts-bar-vertical>
+
+    <div class="info-estacion">
+      <div class="info-estacion__item">
+        <div class="info-estacion__item__title">Ventas</div>
+        <div class="info-estacion__item__value">S/. 1,000.00</div>
+      </div>
+      <div class="info-estacion__item">
+        <div class="info-estacion__item__title">Ganancias</div>
+        <div class="info-estacion__item__value">S/. 1,000.00</div>
+      </div>
+      <div class="info-estacion__item">
+        <div class="info-estacion__item__title">Ganancias</div>
+        <div class="info-estacion__item__value">S/. 1,000.00</div>
+      </div>
+
+    </div>
+  </div>
+</div>
